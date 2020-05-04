@@ -13,6 +13,14 @@ export default  class Navbar extends Component {
     }
 
     render() {
+
+        const { isOpen } = this.state;
+        let navClassses = 'nav-links';
+
+        if (isOpen) {
+            navClassses += ' show-nav';
+        }
+
         return (
             <nav className="navbar">
                 <div className="nav-center">
@@ -28,8 +36,7 @@ export default  class Navbar extends Component {
                         </button>
                     </div>
                     <ul 
-                        className={this.state.isOpen ? 'nav-links show-nav' : 'nav-links'}>
-                    
+                        className={navClassses}>
                         <li>
                             <Link to="/">Home</Link>
                         </li>
